@@ -1,0 +1,288 @@
+:root {
+    --bulbasaur-main: rgb(132, 235, 178);
+    --bulbasaur-shadow: rgb(108, 194, 146);
+    --bulbasaur-profile: rgb(64, 114, 87);
+    --bulbasaur-spots: rgb(35, 88, 60);
+    --bulbo: rgb(100, 204, 109);
+}
+
+main {
+    border: 4px solid var(--bulbasaur-profile);
+    height: 80vmin;
+    width: 80vmin;
+}
+
+#bulbasaur {
+    width: inherit;
+    height: inherit;
+    position: relative;
+}
+
+/* BULBO */
+
+.bulbo {
+    width: 58%;
+    height: 53%;
+    background-color: var(--bulbo);
+    position: relative;
+    top: 9%;
+    left: 5%;
+    border-radius: 0% 36% 0% 49%;
+    transform: rotate(10deg);
+}
+
+/* CABEZA */
+
+.cabeza {
+    width: 56%;
+    height: 53%;
+    background-color: var(--bulbasaur-main);
+    border-block: 1px solid var(--bulbasaur-profile);
+    border-radius: 59% 45% 33% 49%;
+    position: relative;
+    top: -39%;
+    left: 34%;
+    z-index: 1;
+    transform: rotate3d(21, 0, -7, 33deg);
+}
+
+/* NARIZ */
+
+.nariz {
+    width: 10%;
+    height: 4%;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 80%;
+    left: 60%;
+}
+
+.nariz > div {
+    border-left: 2px solid black;
+}
+
+.nariz > div:nth-child(1) {
+    transform: rotate(-40deg);
+}
+
+.nariz > div:nth-child(2) {
+    transform: rotate(40deg);
+}
+
+/* OREJAS */
+
+.oreja-izq {
+    width: 21%;
+    height: 46%;
+    background-color: var(--bulbasaur-main);
+    border-radius: 3% 8% 32% 125%;
+    border-left: 1px solid var(--bulbasaur-profile);
+    border-top: 1px solid var(--bulbasaur-profile);
+    position: absolute;
+    top: -11%;
+    left: 13%;
+    transform: rotate(42deg);
+}
+
+.oreja-der {
+    width: 15%;
+    height: 15%;
+    background-color: var(--bulbasaur-main);
+    border-radius: 22% 6% 19% 1%;
+    position: absolute;
+    top: 17%;
+    right:13%;
+    transform: rotate(349deg);
+}
+
+/* OJOS */
+
+.ojo-izq, .ojo-der {
+    background-color: red;
+    position: absolute;
+}
+
+.ojo-izq {
+    width: 30%;
+    height: 39%;
+    border-radius: 50% 100% 44% 73%;
+    /* 98% 59% 103% 92%
+    203% ​197% 236% 169 */
+    top: 33%;
+    left: 19%; 
+    transform: rotate(9deg) skew(0deg, 0deg);
+    box-shadow: inset 6vmin 1vmin 0 -3vmin white;
+}
+
+.ojo-der {
+    width: 20%;
+    height: 30%;
+    border-radius: 100% 50% 73% 44%;
+    top: 48%;
+    right: 2%;
+    transform: rotate(0deg) skew(0deg, 0deg);
+    box-shadow: inset -6vmin 1vmin 0 -3vmin white;
+}
+
+/* BOCA */
+
+.boca {
+    width: 77%;
+    height: 20%;
+    border-radius: 105% 97%;
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 70%;
+    left: 16%;
+    transform: rotate(10deg);
+}
+
+/* CUERPO */
+
+.cuerpo {
+    width: 66%;
+    height: 45%;
+    background-color: var(--bulbasaur-main);
+    border-radius: 73% 61% 49% 54%;
+    border: 1px solid var(--bulbasaur-profile);
+    transform: rotate(352deg);
+    position: relative;
+    top: -69%;
+    left: 6%;
+}
+
+.cuerpo::before {
+    content: "";
+    width: 29%;
+    height: 31%;
+    background-color: var(--bulbasaur-main);
+    position: absolute;
+    top: 56%;
+    left: 80%;
+}
+
+.espalda  {
+    width: 66%;
+    height: 34%;
+    background-color: var(--bulbasaur-main);
+    border-top: 1px solid var(--bulbasaur-profile);
+    border-radius: 76% 27% 110% 191%;
+    transform: rotate(332deg);
+    position: relative;
+    top: 9%;
+    left: 1%;
+
+}
+
+.espalda::before {
+    content: "";
+    width: 55%;
+    height: 32%;
+    background-color: var(--bulbasaur-main);
+    border-radius: 179% 139% 1% 1%;
+    position: absolute;
+    top: -6%;
+    left: 9%;
+}
+
+
+/* PATAS */
+
+.pata-trasera-der, .pata-trasera-izq, .pata-delantera-izq, .pata-delantera-der {
+    background-color: var(--bulbasaur-main);
+    position: absolute;
+    border-inline: 1px solid var(--bulbasaur-profile);
+    display: flex;
+    align-items: flex-end;
+}
+
+.pata-trasera-der {
+    width: 19%;
+    height: 39%;
+    top: 47%;
+    right: 38%;
+    border-radius: 74% 69% 56% 41%;
+    transform: rotate(1deg);
+    /*
+    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
+    */
+}
+
+.pata-trasera-izq {
+    width: 30%;
+    height: 73%;
+    top: 31%;
+    left: -3%;
+    justify-self: center;
+    border-radius: 60% 28% 0% 70%;
+    transform: rotate(356deg);
+    
+    /*
+    border-radius: 74% 69% 56% 41%;
+    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
+    */
+}
+
+.pata-delantera-izq {
+    width: 30%;
+    height: 80%;
+    top: 41%;
+    left: 26%;
+    border-radius: 74% 69% 56% 41%;
+    transform: rotate(356deg);
+    /*
+    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
+    */
+}
+
+.pata-delantera-izq::before {
+    content: "";
+    width: 84%;
+    height: 32%;
+    background-color: var(--bulbasaur-main);
+    border-radius: 179% 139% 116% 89%;
+    position: absolute;
+    top: -6%;
+    left: 20%;
+}
+
+.pata-delantera-der {
+    width: 20%;
+    height: 45%;
+    top: 46%;
+    right: 16%;
+    border-radius: 74% 69% 50% 39%;
+    transform: rotate(12deg);
+    /*
+    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
+    */
+}
+
+/* DEDOS */
+
+.dedos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-basis: 89%;
+    height: 9%;
+    margin-left: 8%;
+    margin-bottom: -2%;
+    transform: rotate(356deg);
+
+}
+
+.dedo {
+    flex-basis: 33%;
+    height: 100%;
+    border-radius: 43% 0% 100% 0%;
+    background-color: white;
+    border: 1px solid grey;
+    transform: rotate(280deg);
+    margin: 3%;
+}
+
+
+
