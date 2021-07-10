@@ -1,9 +1,10 @@
 :root {
     --bulbasaur-main: rgb(132, 235, 178);
-    --bulbasaur-shadow: rgb(108, 194, 146);
+    --bulbasaur-shadow: rgb(112, 219, 160);
     --bulbasaur-profile: rgb(64, 114, 87);
-    --bulbasaur-spots: rgb(35, 88, 60);
+    --bulbasaur-spots: rgb(54, 117, 84);
     --bulbo: rgb(100, 204, 109);
+    --irises-shadow: rgb(206, 22, 22);
 }
 
 main {
@@ -34,7 +35,7 @@ main {
 /* CABEZA */
 
 .cabeza {
-    width: 56%;
+    width: 58%;
     height: 53%;
     background-color: var(--bulbasaur-main);
     border-block: 1px solid var(--bulbasaur-profile);
@@ -44,6 +45,8 @@ main {
     left: 34%;
     z-index: 1;
     transform: rotate3d(21, 0, -7, 33deg);
+    box-shadow: inset 3vmin -2vmin 0vmin -1vmin var(--bulbasaur-shadow), 
+                -2vmin 3vmin 0vmin -2vmin var(--bulbasaur-shadow);
 }
 
 /* NARIZ */
@@ -92,16 +95,21 @@ main {
     background-color: var(--bulbasaur-main);
     border-radius: 22% 6% 19% 1%;
     position: absolute;
-    top: 17%;
-    right:13%;
+    top: 16%;
+    right:12%;
     transform: rotate(349deg);
 }
 
 /* OJOS */
 
+.ojo {
+    box-shadow: .8vmin .5vmin 0vmin var(--bulbasaur-shadow);
+}
+
 .ojo-izq, .ojo-der {
-    background-color: red;
-    position: absolute;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .ojo-izq {
@@ -109,21 +117,66 @@ main {
     height: 39%;
     border-radius: 50% 100% 44% 73%;
     /* 98% 59% 103% 92%
-    203% ​197% 236% 169 */
+    203% ​197% 236% 169 
+    box-shadow: inset 6vmin 1vmin 0 -3vmin white;*/
     top: 33%;
     left: 19%; 
     transform: rotate(9deg) skew(0deg, 0deg);
-    box-shadow: inset 6vmin 1vmin 0 -3vmin white;
+    
 }
 
 .ojo-der {
     width: 20%;
     height: 30%;
     border-radius: 100% 50% 73% 44%;
-    top: 48%;
-    right: 2%;
+    top: 7%;
+    left: 78%;
     transform: rotate(0deg) skew(0deg, 0deg);
+    /*
     box-shadow: inset -6vmin 1vmin 0 -3vmin white;
+    */
+}
+
+.iris {
+    width: 80%;
+    height: 100%;
+    background-color: red;
+    border-radius: 55%;
+    position: absolute;
+
+}
+
+.ojo-izq .iris {
+    top: 1%;
+    left: 28%;
+    box-shadow: inset -1vmin 5vmin 0vmin 0vmin var(--irises-shadow);
+}
+
+.ojo-der .iris {
+    top: 1%;
+    left: -13%;
+    transform: rotate(190deg);
+    box-shadow: inset 0vmin -1vmin 0vmin 1vmin var(--irises-shadow);
+}
+
+.pupila {
+    width: 35%;
+    height: 50%;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: -1vmin 1vmin 0vmin 1vmin var(--irises-shadow);
+
+}
+
+.ojo-izq .pupila {
+    top: 19%;
+    left: 50%;
+}
+
+.ojo-der .pupila {
+    top: 28%;
+    left: 47%;
 }
 
 /* BOCA */
@@ -136,7 +189,7 @@ main {
     position: absolute;
     top: 70%;
     left: 16%;
-    transform: rotate(10deg);
+    transform: rotate(5deg);
 }
 
 /* CUERPO */
@@ -151,16 +204,21 @@ main {
     position: relative;
     top: -69%;
     left: 6%;
+    box-shadow: inset 6vmin -16vmin 0vmin -1vmin var(--bulbasaur-shadow);
 }
 
 .cuerpo::before {
     content: "";
-    width: 29%;
+    width: 8%;
     height: 31%;
-    background-color: var(--bulbasaur-main);
+    border-radius: 73% 61% 49% 54%;
+    background-color: var(--bulbasaur-shadow);
     position: absolute;
     top: 56%;
-    left: 80%;
+    left: 92%;
+    transform: rotate(33deg);
+    box-shadow: inset 3vmin -2vmin 0vmin -1vmin var(--bulbasaur-shadow);
+
 }
 
 .espalda  {
@@ -205,9 +263,7 @@ main {
     right: 38%;
     border-radius: 74% 69% 56% 41%;
     transform: rotate(1deg);
-    /*
-    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
-    */
+    background-color: var(--bulbasaur-shadow);
 }
 
 .pata-trasera-izq {
@@ -216,12 +272,11 @@ main {
     top: 31%;
     left: -3%;
     justify-self: center;
-    border-radius: 60% 28% 0% 70%;
+    border-radius: 60% 28% 35% 70%;
     transform: rotate(356deg);
-    
+    box-shadow: inset 3vmin -2vmin 0vmin 0vmin var(--bulbasaur-shadow);
     /*
     border-radius: 74% 69% 56% 41%;
-    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
     */
 }
 
@@ -232,9 +287,8 @@ main {
     left: 26%;
     border-radius: 74% 69% 56% 41%;
     transform: rotate(356deg);
-    /*
-    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
-    */
+    box-shadow: inset 2vmin -3vmin 0vmin 0vmin var(--bulbasaur-shadow), 9vmin -6vmin 0vmin -4vmin var(--bulbasaur-shadow);
+
 }
 
 .pata-delantera-izq::before {
@@ -255,22 +309,18 @@ main {
     right: 16%;
     border-radius: 74% 69% 50% 39%;
     transform: rotate(12deg);
-    /*
-    box-shadow: inset 1vmin 1vmin 1vmin 1vmin red;
-    */
+    box-shadow: inset 8vmin -1vmin 0vmin 1vmin var(--bulbasaur-shadow);
 }
 
 /* DEDOS */
 
 .dedos {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
     flex-basis: 89%;
     height: 9%;
     margin-left: 8%;
     margin-bottom: -2%;
-    transform: rotate(356deg);
 
 }
 
@@ -284,5 +334,111 @@ main {
     margin: 3%;
 }
 
+.pata-delantera-der > .dedos {
+    border-radius: 74% 69% 50% 39%;
+    transform: rotate(351deg);
+    margin-left: 30%;
+}
 
+.pata-trasera-izq > .dedos {
+    border-radius: 74% 69% 50% 39%;
+    transform: rotate(10deg);
+    margin-left: 23%;
+}
+
+/* MANCHAS */
+
+.mancha {
+    background-color: var(--bulbasaur-spots);
+    position: absolute;
+}
+
+.mancha:nth-of-type(1) {
+    width: 10%;
+    height: 10%;
+    border-radius: 74% 69% 50% 39%;
+    top: 60%;
+    left: 10%;
+    transform: rotate(10deg);
+}
+
+.mancha:nth-of-type(2) {
+    width: 16%;
+    height: 12%;
+    border-radius: 74% 69% 50% 39%;
+    top: 43%;
+    left: 21%;
+    transform: rotate(332deg);
+}
+
+.mancha:nth-of-type(3) {
+    width: 7%;
+    height: 12%;
+    border-radius: 82% 46% 78% 102%;
+    top: 71%;
+    left: 31%;
+    transform: rotate(147deg);
+}
+
+.mancha:nth-of-type(4) {
+    width: 4%;
+    height: 8%;
+    border-radius: 82% 46% 78% 102%;
+    top: 73%;
+    left: 76%;
+    transform: rotate(16deg);
+}
+
+.mancha:nth-of-type(5) {
+    width: 8%;
+    height: 8%;
+    border-radius: 105% 199% 144% 235%;
+    top: 35%;
+    left: 70%;
+    transform: rotate(68deg);
+    z-index: 1;
+}
+
+.mancha:nth-of-type(6) {
+    width: 6%;
+    height: 4%;
+    border-radius: 65% 147% 58% 69%;
+    top: 33%;
+    left: 63%;
+    transform: rotate(68deg);
+    z-index: 1;
+}
+
+.mancha:nth-of-type(7) {
+    width: 12%;
+    height: 8%;
+    border-radius: 109% 170% 112% 235%;
+    top: 23%;
+    left: 67%;
+    transform: rotate(337deg);
+    z-index: 1;
+}
+
+/* CEJAS */
+
+.ceja {
+    border-right: 1px solid black;
+    position: absolute;
+    width: 3%;
+    height: 8%;
+    border-radius: 1% 70% 50% 1%;
+    z-index: 1;
+}
+
+.ceja:nth-of-type(1) {
+    top: 31%;
+    left: 56%;
+    transform: rotate(306deg);
+}
+
+.ceja:nth-of-type(2) {
+    top: 30%;
+    left: 81%;
+    transform: rotate(225deg);
+}
 
